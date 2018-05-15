@@ -15,7 +15,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EjemploCoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,12 +35,17 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRU-dN-9hK">
                                 <rect key="frame" x="92" y="602" width="190" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="R5L-E1-Eqb"/>
                                 </constraints>
-                                <state key="normal" title="Calcular venta">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="CALCULAR PRECIO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="M7F-A0-357" kind="show" identifier="showSellCar" id="Bbm-lB-Vph"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,12 +66,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+            <point key="canvasLocation" x="-250" y="33"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5UA-Sj-nk7">
             <objects>
-                <viewController id="M7F-A0-357" sceneMemberID="viewController">
+                <viewController id="M7F-A0-357" customClass="ViewController" customModule="EjemploCoreML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tg6-vs-n6n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,6 +92,9 @@
                                             <segment title="307"/>
                                             <segment title="407"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="calculateValue" destination="M7F-A0-357" eventType="valueChanged" id="gsk-H0-7Oc"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extras" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmB-eh-F15">
                                         <rect key="frame" x="0.0" y="64.5" width="327" height="20.5"/>
@@ -97,6 +105,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sV0-xf-o7g">
                                         <rect key="frame" x="0.0" y="93" width="329" height="31"/>
                                         <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="calculateValue" destination="M7F-A0-357" eventType="valueChanged" id="bmF-mB-77h"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometraje" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFB-OU-BtD">
                                         <rect key="frame" x="0.0" y="132" width="327" height="20.5"/>
@@ -107,6 +118,9 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="0.0" maxValue="200000" translatesAutoresizingMaskIntoConstraints="NO" id="e9L-Yg-UUn">
                                         <rect key="frame" x="-2" y="160.5" width="331" height="31"/>
                                         <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="calculateValue" destination="M7F-A0-357" eventType="valueChanged" id="x7f-kT-EVc"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEj-3h-amc">
                                         <rect key="frame" x="0.0" y="198.5" width="327" height="20.5"/>
@@ -122,6 +136,9 @@
                                             <segment title="Muy bueno"/>
                                             <segment title="Perfecto"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="calculateValue" destination="M7F-A0-357" eventType="valueChanged" id="OzO-Uc-GAg"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio de venta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA2-Iz-5iW">
                                         <rect key="frame" x="0.0" y="263" width="327" height="20.5"/>
@@ -147,10 +164,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qXX-16-jdk"/>
                     </view>
+                    <connections>
+                        <outlet property="extrasSwitch" destination="sV0-xf-o7g" id="5ci-XJ-PiG"/>
+                        <outlet property="kmsLabel" destination="QFB-OU-BtD" id="vFg-gT-7IW"/>
+                        <outlet property="kmsSlider" destination="e9L-Yg-UUn" id="8dI-Tx-A5N"/>
+                        <outlet property="modelSegmentedControl" destination="XSc-Cc-u8N" id="LI6-5B-8id"/>
+                        <outlet property="priceLabel" destination="Q7L-QP-wgo" id="StZ-pY-dOC"/>
+                        <outlet property="stackView" destination="LLz-L1-hTN" id="I4W-he-Zc7"/>
+                        <outlet property="statusSegmentedControl" destination="CvK-ub-87q" id="F5f-IQ-FvN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRx-7H-w8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="33"/>
+            <point key="canvasLocation" x="539" y="33"/>
         </scene>
     </scenes>
     <resources>
